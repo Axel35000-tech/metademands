@@ -638,20 +638,16 @@ function plugin_metademands_wizard_displayStepButton(metademandparams)
 
         if (metademandparams.seeform == 0) {
             if (nextTab >= x.length) {
-                console.log('passe -1');
                 document.getElementById('nextBtn').innerHTML = metademandparams.submittitle;
                 document.getElementById('nextBtn2').style.display = 'none';
             } else {
                 if (create) {
-                    console.log('passe 0');
                     document.getElementById('nextBtn').innerHTML = metademandparams.submitsteptitle;
                     document.getElementById('nextBtn2').style.display = 'none';
                 } else if (metademandparams.changestepbystepoption) {
-                    console.log('passe 1');
                     document.getElementById('nextBtn').innerHTML = metademandparams.submitsteptitle;
                     document.getElementById('nextBtn2').style.display = 'inline';
                 } else {
-                    console.log('passe 2');
                     document.getElementById('nextBtn').innerHTML = metademandparams.nextsteptitle;
                     document.getElementById('nextBtn2').style.display = 'none';
                 }
