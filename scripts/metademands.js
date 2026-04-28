@@ -232,10 +232,10 @@ function plugin_metademands_wizard_validateForm(metademandparams)
                 }
             } else {
                 $('[name=\"' + fieldname + '\"]').removeClass('invalid');
-                $('[name=\"' + fieldname + '\"]').removeAttr('required');
+                // $('[name=\"' + fieldname + '\"]').removeAttr('required');
 //                                hack for date
                 $('[name=\"' + fieldname + '\"]').next('input').removeClass('invalid');
-                $('[name=\"' + fieldname + '\"]').next('input').removeAttr('required');
+                // $('[name=\"' + fieldname + '\"]').next('input').removeAttr('required');
             }
         }
         if (y[i].type == 'file'
@@ -638,15 +638,20 @@ function plugin_metademands_wizard_displayStepButton(metademandparams)
 
         if (metademandparams.seeform == 0) {
             if (nextTab >= x.length) {
+                console.log('passe -1');
                 document.getElementById('nextBtn').innerHTML = metademandparams.submittitle;
+                document.getElementById('nextBtn2').style.display = 'none';
             } else {
                 if (create) {
+                    console.log('passe 0');
                     document.getElementById('nextBtn').innerHTML = metademandparams.submitsteptitle;
                     document.getElementById('nextBtn2').style.display = 'none';
                 } else if (metademandparams.changestepbystepoption) {
+                    console.log('passe 1');
                     document.getElementById('nextBtn').innerHTML = metademandparams.submitsteptitle;
                     document.getElementById('nextBtn2').style.display = 'inline';
                 } else {
+                    console.log('passe 2');
                     document.getElementById('nextBtn').innerHTML = metademandparams.nextsteptitle;
                     document.getElementById('nextBtn2').style.display = 'none';
                 }
